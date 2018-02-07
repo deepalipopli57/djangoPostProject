@@ -1,14 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <h2>Welcome</h2>
-    <div>
-        <h1><a href="/">Django Girls Blog</a></h1>
-    </div>
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+<div class="page-header">
+    <a href="/"></a>
+</div>
+    {% for post in posts %}
+        <div>
+            <p><a href="">{{ post.title }}</a></p>
+            <p>Published on : {{ post.published_on }}</p>
+            <p>Created on : {{ post.created_on }}</p>
+            <p>Text : {{ post.text|linebreaksbr }}</p>
+        </div>
+
+    {% endfor %}
 </head>
 <body>
-
 </body>
 </html>

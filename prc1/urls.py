@@ -6,4 +6,5 @@ from prc1.views import post_list
 
 urlpatterns = [
     url(r'^posts/', views.post_list, name='post_list'),
+    url(r'^post_new/', views.post_new, name='post_new'),
 ]
